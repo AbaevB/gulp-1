@@ -9,7 +9,7 @@ const svgSprite = require('gulp-svg-sprite');
 const sourcemaps = require('gulp-sourcemaps');
 const htmlmin = require('gulp-htmlmin');
 const notify = require('gulp-notify');
-const image = require('gulp-image');
+const image = require('gulp-imagemin');
 const concat = require('gulp-concat');
 
 const clean = () => {
@@ -36,7 +36,7 @@ const styles = () => {
       cascade: false,
     }))
     .pipe(cleanCSS({ level: 2 }))
-		.pipe(concat('main.css'))
+		.pipe(concat('style.css'))
     .pipe(sourcemaps.write('.'))
     .pipe(dest('./app/css/'))
     .pipe(browserSync.stream());
